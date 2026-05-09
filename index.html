@@ -292,18 +292,21 @@
             <div class="contact-wrapper">
                 <div class="contact-form animate-on-scroll slide-left">
                     <h3 class="lang-text" data-en="Inquiry Form" data-mr="चौकशी फॉर्म">Inquiry Form</h3>
-                    <form id="inquiryForm">
+                    <form id="inquiryForm" action="https://formspree.io/f/mjglajzn" method="POST">
                         <div class="form-group">
-                            <input type="text" id="name" placeholder="Full Name" required>
+                            <input type="text" name="name" id="name" placeholder="Full Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" id="email" placeholder="Email Address" required>
+                            <input type="email" name="email" id="email" placeholder="Email Address" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" id="subject" placeholder="Subject" required>
+                            <input type="tel" name="phone" id="phone" placeholder="Phone Number" required>
                         </div>
                         <div class="form-group">
-                            <textarea id="message" rows="5" placeholder="Message" required></textarea>
+                            <input type="text" name="subject" id="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" id="message" rows="5" placeholder="Message" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary w-100 lang-text" data-en="Send Message"
                             data-mr="संदेश पाठवा">Send Message</button>

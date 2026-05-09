@@ -82,15 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Form Submission (Prevent default for demo)
-    const inquiryForm = document.getElementById('inquiryForm');
-    if (inquiryForm) {
-        inquiryForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Thank you for your inquiry! We will get back to you soon.');
-            inquiryForm.reset();
-        });
-    }
+
 
     // Language Toggle
     const langBtn = document.getElementById('lang-toggle-btn');
@@ -109,19 +101,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 el.textContent = el.getAttribute(`data-${currentLang}`);
             });
             
-            // Update form placeholders
             const placeholders = {
-                'en': { name: 'Full Name', email: 'Email Address', subject: 'Subject', message: 'Message' },
-                'mr': { name: 'पूर्ण नाव', email: 'ईमेल पत्ता', subject: 'विषय', message: 'संदेश' }
+                'en': { name: 'Full Name', email: 'Email Address', phone: 'Phone Number', subject: 'Subject', message: 'Message' },
+                'mr': { name: 'पूर्ण नाव', email: 'ईमेल पत्ता', phone: 'फोन नंबर', subject: 'विषय', message: 'संदेश' }
             };
             
             const nameInput = document.getElementById('name');
             const emailInput = document.getElementById('email');
+            const phoneInput = document.getElementById('phone');
             const subjectInput = document.getElementById('subject');
             const messageInput = document.getElementById('message');
             
             if(nameInput) nameInput.placeholder = placeholders[currentLang].name;
             if(emailInput) emailInput.placeholder = placeholders[currentLang].email;
+            if(phoneInput) phoneInput.placeholder = placeholders[currentLang].phone;
             if(subjectInput) subjectInput.placeholder = placeholders[currentLang].subject;
             if(messageInput) messageInput.placeholder = placeholders[currentLang].message;
         });
