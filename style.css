@@ -376,6 +376,14 @@ nav ul li a.active {
     transition: var(--transition);
 }
 
+/* --- External Examinations Section --- */
+.exam-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
 /* --- Facilities Section --- */
 .facility-grid {
     display: grid;
