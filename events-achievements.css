@@ -1,0 +1,544 @@
+/* ================================================================
+   events-achievements.css
+   Styles specific to the Events & Achievements page.
+   Inherits base variables and utilities from style.css.
+   ================================================================ */
+
+/* --- Nav active state on this page --- */
+.ea-nav-active {
+    color: var(--primary-color) !important;
+}
+.ea-nav-active::after {
+    width: 100% !important;
+}
+
+/* --- Page Hero --- */
+#ea-hero {
+    min-height: 55vh;
+    background: linear-gradient(135deg, #0d47a1 0%, #0a2540 60%, #1565c0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 20px 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+#ea-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.ea-hero-overlay {
+    display: none;
+}
+
+.ea-hero-content {
+    position: relative;
+    z-index: 1;
+    color: var(--white);
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.ea-hero-content h1 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+    line-height: 1.2;
+}
+
+.ea-hero-content p {
+    font-size: 1.15rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+    line-height: 1.7;
+}
+
+/* --- Tab Navigation Bar --- */
+.ea-tabs-wrapper {
+    background: var(--white);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 80px;
+    z-index: 100;
+    border-bottom: 1px solid #e8ecf0;
+}
+
+.ea-tabs {
+    display: flex;
+    gap: 0;
+}
+
+.ea-tab-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 18px 20px;
+    border: none;
+    background: transparent;
+    color: var(--text-light);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+    font-family: 'Inter', sans-serif;
+}
+
+.ea-tab-btn:hover {
+    color: var(--primary-color);
+    background: rgba(13, 71, 161, 0.04);
+}
+
+.ea-tab-btn--active {
+    color: var(--primary-color);
+    border-bottom-color: var(--secondary-color);
+    background: rgba(13, 71, 161, 0.04);
+}
+
+.ea-tab-btn i {
+    font-size: 1.1rem;
+}
+
+/* --- Section show/hide --- */
+.ea-hidden {
+    display: none !important;
+}
+
+/* --- Cards Grid --- */
+.ea-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 30px;
+}
+
+/* --- Individual Card --- */
+.ea-card {
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.ea-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+/* --- Card Header --- */
+.ea-card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 24px 24px 0;
+}
+
+.ea-card-icon {
+    width: 52px;
+    height: 52px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--white);
+    font-size: 1.4rem;
+}
+
+.ea-card-icon--achievement {
+    background: linear-gradient(135deg, #f57f17, #fbc02d);
+}
+
+.ea-card-meta {
+    flex: 1;
+    min-width: 0;
+}
+
+.ea-card-meta h3 {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+
+.ea-date {
+    font-size: 0.88rem;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.ea-date i {
+    color: var(--primary-light);
+}
+
+.ea-badge {
+    display: inline-block;
+    background: rgba(13, 71, 161, 0.1);
+    color: var(--primary-color);
+    border-radius: 20px;
+    padding: 3px 12px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+/* --- Card Description --- */
+.ea-description {
+    padding: 16px 24px 8px;
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.65;
+}
+
+/* --- Achievement Details --- */
+.ea-achievement-details {
+    padding: 16px 24px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ea-detail-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    color: var(--text-light);
+}
+
+.ea-detail-row i {
+    width: 18px;
+    text-align: center;
+    color: var(--primary-light);
+    font-size: 0.95rem;
+    flex-shrink: 0;
+}
+
+.ea-result {
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.ea-result i {
+    color: #f57f17;
+}
+
+/* --- Photo Grid inside card --- */
+.ea-photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 6px;
+    padding: 16px 24px;
+}
+
+.ea-photo-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    aspect-ratio: 4/3;
+    background: #e8ecf0;
+}
+
+.ea-photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.ea-photo-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(13, 71, 161, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: var(--white);
+    font-size: 1.4rem;
+}
+
+.ea-photo-item:hover img {
+    transform: scale(1.08);
+}
+
+.ea-photo-item:hover .ea-photo-overlay {
+    opacity: 1;
+}
+
+/* --- Video Block inside card --- */
+.ea-video-block {
+    padding: 16px 24px 24px;
+    margin-top: auto;
+}
+
+.ea-video-block h4 {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.ea-video-block h4::before {
+    content: '\f144';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: var(--primary-light);
+    font-size: 0.9rem;
+}
+
+.ea-video-block video {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+    background: #000;
+    max-height: 280px;
+}
+
+/* --- Empty State --- */
+.ea-empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 80px 30px;
+    color: var(--text-light);
+}
+
+.ea-empty-state i {
+    font-size: 4rem;
+    color: #cbd5e0;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.ea-empty-state h3 {
+    font-size: 1.4rem;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+}
+
+.ea-empty-state p {
+    font-size: 1rem;
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* --- Lightbox --- */
+.ea-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.ea-lightbox.ea-lightbox--open {
+    display: flex;
+}
+
+.ea-lightbox-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    cursor: pointer;
+}
+
+.ea-lightbox-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    max-width: 90vw;
+    max-height: 90vh;
+    padding: 10px;
+}
+
+#ea-lightbox-img {
+    max-width: 80vw;
+    max-height: 82vh;
+    border-radius: 8px;
+    object-fit: contain;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    display: block;
+}
+
+.ea-lightbox-close,
+.ea-lightbox-prev,
+.ea-lightbox-next {
+    background: rgba(255,255,255,0.15);
+    border: none;
+    color: var(--white);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.ea-lightbox-close {
+    position: absolute;
+    top: -20px;
+    right: -10px;
+    width: 40px;
+    height: 40px;
+    z-index: 2;
+}
+
+.ea-lightbox-prev,
+.ea-lightbox-next {
+    width: 48px;
+    height: 48px;
+}
+
+.ea-lightbox-close:hover,
+.ea-lightbox-prev:hover,
+.ea-lightbox-next:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+.ea-lightbox-counter {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255,255,255,0.7);
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+/* ============================================================
+   HOMEPAGE PROMO SECTION — Events & Achievements teaser card
+   ============================================================ */
+.ea-promo-section {
+    padding: 80px 0;
+}
+
+.ea-promo-card {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background: linear-gradient(135deg, #0d47a1 0%, #1565c0 100%);
+    border-radius: 16px;
+    padding: 50px;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.ea-promo-card::before {
+    content: '\f030';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 9rem;
+    opacity: 0.07;
+    pointer-events: none;
+}
+
+.ea-promo-icon {
+    font-size: 3.5rem;
+    flex-shrink: 0;
+    color: var(--secondary-color);
+}
+
+.ea-promo-text h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: var(--white);
+}
+
+.ea-promo-text p {
+    opacity: 0.88;
+    margin-bottom: 24px;
+    font-size: 1.05rem;
+    line-height: 1.65;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .ea-hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .ea-hero-content p {
+        font-size: 1rem;
+    }
+
+    .ea-tab-btn {
+        padding: 14px 10px;
+        font-size: 0.9rem;
+        gap: 6px;
+    }
+
+    .ea-cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ea-photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ea-lightbox-prev,
+    .ea-lightbox-next {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+
+    #ea-lightbox-img {
+        max-width: 88vw;
+    }
+
+    .ea-promo-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 36px 24px;
+        gap: 20px;
+    }
+
+    .ea-promo-card::before {
+        right: 20px;
+        font-size: 6rem;
+    }
+
+    .ea-promo-text h2 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .ea-tab-btn span {
+        display: none;
+    }
+    .ea-tab-btn i {
+        font-size: 1.3rem;
+    }
+    .ea-tab-btn {
+        padding: 16px;
+    }
+}
