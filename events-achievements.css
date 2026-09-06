@@ -542,3 +542,256 @@
         padding: 16px;
     }
 }
+
+/* ============================================================
+   GALLERY GRID — 3-col desktop, 2-col tablet, 1-col mobile
+   ============================================================ */
+.ea-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 40px;
+}
+
+/* Gallery item card */
+.ea-gallery-item {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.ea-gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.13);
+}
+
+.ea-gallery-thumb {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    background: #e8ecf0;
+}
+
+.ea-gallery-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.ea-gallery-item:hover .ea-gallery-thumb img {
+    transform: scale(1.05);
+}
+
+.ea-gallery-caption {
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    background: var(--white);
+    flex-shrink: 0;
+}
+
+.ea-caption-text {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    line-height: 1.3;
+}
+
+.ea-video-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(13,71,161,0.1);
+    color: var(--primary-color);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 12px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* ============================================================
+   VIDEO THUMBNAIL
+   ============================================================ */
+.ea-video-thumb {
+    position: relative;
+    cursor: pointer;
+}
+
+.ea-thumb-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+}
+
+.ea-video-play-btn {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.3);
+    color: #fff;
+    font-size: 3.5rem;
+    transition: background 0.3s ease, font-size 0.2s ease;
+}
+
+.ea-video-thumb:hover .ea-video-play-btn {
+    background: rgba(13,71,161,0.5);
+    font-size: 4rem;
+}
+
+.ea-gallery-item--video {
+    cursor: pointer;
+}
+
+/* ============================================================
+   CATEGORY SECTION HEADER
+   ============================================================ */
+.ea-cat-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 8px;
+}
+
+.ea-cat-icon-wrap {
+    width: 60px;
+    height: 60px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.6rem;
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+/* ============================================================
+   FEATURED GRID — 2x2 on desktop, 1-col on mobile
+   ============================================================ */
+.ea-featured-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.ea-featured-card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.ea-featured-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 32px rgba(0,0,0,0.14);
+}
+
+.ea-featured-thumb {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    background: #e8ecf0;
+}
+
+.ea-featured-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.ea-featured-card:hover .ea-featured-thumb img {
+    transform: scale(1.05);
+}
+
+.ea-featured-label {
+    padding: 16px 18px;
+}
+
+.ea-cat-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--primary-color);
+    margin-bottom: 6px;
+}
+
+.ea-featured-label h3 {
+    font-size: 1.15rem;
+    color: var(--text-dark);
+    margin: 0;
+    line-height: 1.35;
+}
+
+/* ============================================================
+   LIGHTBOX POOL — hidden data carrier divs
+   ============================================================ */
+.ea-lightbox-pool {
+    display: none !important;
+}
+
+/* ============================================================
+   VIDEO MODAL extra
+   ============================================================ */
+.ea-video-modal-content {
+    flex-direction: column;
+    align-items: center;
+    max-width: 92vw;
+}
+
+/* ============================================================
+   RESPONSIVE OVERRIDES
+   ============================================================ */
+@media (max-width: 900px) {
+    .ea-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ea-featured-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .ea-gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ea-featured-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ea-cat-header {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .ea-cat-icon-wrap {
+        width: 48px;
+        height: 48px;
+        font-size: 1.3rem;
+    }
+}
+
