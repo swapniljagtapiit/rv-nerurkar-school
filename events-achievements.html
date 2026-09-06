@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events &amp; Achievements | R.V. Nerurkar High School and Junior College</title>
+    <meta name="description"
+        content="Explore school events, student achievements, photos and videos from R.V. Nerurkar High School and Junior College, Dombivli East.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="events-achievements.css">
+    <link rel="icon" type="image/jpeg" href="images/RVN_logo.jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header / Nav -->
+    <header id="navbar">
+        <div class="container">
+            <a href="index.html" class="logo" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                <img src="images/RVN_logo.jpeg" alt="RVN Logo" style="height: 50px; width: auto; border-radius: 50%;">
+                <span>R.V. Nerurkar School</span>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="lang-text" data-en="Home" data-mr="मुखपृष्ठ">Home</a></li>
+                    <li><a href="index.html#about" class="lang-text" data-en="About" data-mr="आमच्याबद्दल">About</a></li>
+                    <li><a href="index.html#courses" class="lang-text" data-en="Academics" data-mr="शैक्षणिक">Academics</a></li>
+                    <li><a href="index.html#facilities" class="lang-text" data-en="Facilities" data-mr="सुविधा">Facilities</a></li>
+                    <li><a href="events-achievements.html" class="lang-text ea-nav-active" data-en="Events &amp; Achievements" data-mr="कार्यक्रम आणि विद्यार्थी यश">Events &amp; Achievements</a></li>
+                    <li><a href="index.html#contact" class="lang-text" data-en="Contact" data-mr="संपर्क">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button id="lang-toggle-btn" class="lang-btn">मराठी</button>
+                <div class="menu-toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section id="ea-hero">
+        <div class="ea-hero-overlay"></div>
+        <div class="ea-hero-content">
+            <h1 class="lang-text" data-en="Events &amp; Achievements" data-mr="कार्यक्रम आणि विद्यार्थी यश">
+                Events &amp; Achievements</h1>
+            <p class="lang-text"
+                data-en="Celebrating the moments, activities and achievements of our students and school."
+                data-mr="आमच्या विद्यार्थ्यांच्या आणि शाळेच्या कार्यक्रमांचे व यशाचे क्षण.">
+                Celebrating the moments, activities and achievements of our students and school.</p>
+            <a href="index.html" class="btn btn-secondary lang-text" data-en="&larr; Back to Home" data-mr="&larr; मुख्यपृष्ठावर परत">&larr; Back to Home</a>
+        </div>
+    </section>
+
+    <!-- Tab Navigation -->
+    <div class="ea-tabs-wrapper">
+        <div class="container">
+            <div class="ea-tabs" role="tablist">
+                <button class="ea-tab-btn ea-tab-btn--active" id="tab-events" role="tab"
+                    aria-selected="true" aria-controls="section-events" onclick="switchTab('events')">
+                    <i class="fa-solid fa-star"></i>
+                    <span class="lang-text" data-en="School Events" data-mr="शालेय कार्यक्रम">School Events</span>
+                </button>
+                <button class="ea-tab-btn" id="tab-achievements" role="tab"
+                    aria-selected="false" aria-controls="section-achievements" onclick="switchTab('achievements')">
+                    <i class="fa-solid fa-trophy"></i>
+                    <span class="lang-text" data-en="Student Achievements" data-mr="विद्यार्थी यश">Student Achievements</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== SCHOOL EVENTS SECTION ===================== -->
+    <!--
+        HOW TO ADD A NEW EVENT CARD:
+        1. Copy the "EVENT CARD TEMPLATE" block below.
+        2. Remove the comment markers (remove the lines that say "/*" and "*/").
+        3. Paste the copied block ABOVE the "EMPTY STATE" div.
+        4. Fill in:
+             - The event title (English and Marathi in data-en and data-mr).
+             - The date (or remove the <span class="ea-date"> line if unknown).
+             - A short description (or remove the <p class="ea-description"> block entirely).
+             - Add <img> tags inside .ea-photo-grid for each photo.
+               Use data-gallery="event-N" on each .ea-photo-item (same value for all photos in one event).
+               Use data-index="0", data-index="1", etc. for each photo.
+             - Add a <video> block if a teacher shares a video (or remove .ea-video-block entirely).
+        5. When you add at least one card, remove or hide the EMPTY STATE div.
+    -->
+    <section id="section-events" class="section-padding ea-section" role="tabpanel" aria-labelledby="tab-events">
+        <div class="container">
+            <div class="text-center animate-on-scroll" style="margin-bottom: 50px;">
+                <h2 class="section-title lang-text" data-en="School Events" data-mr="शालेय कार्यक्रम">School Events</h2>
+                <p class="section-subtitle lang-text"
+                    data-en="Moments from events, functions and activities conducted at our school."
+                    data-mr="आमच्या शाळेत आयोजित कार्यक्रम, समारंभ आणि उपक्रमांचे क्षण.">
+                    Moments from events, functions and activities conducted at our school.</p>
+            </div>
+
+            <div class="ea-cards-grid" id="events-grid">
+
+                <!--
+                ===========================================================
+                EVENT CARD TEMPLATE — Copy this block to add a real event.
+                ===========================================================
+
+                <div class="ea-card animate-on-scroll fade-up">
+                    <div class="ea-card-header">
+                        <div class="ea-card-icon">
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <div class="ea-card-meta">
+                            <h3 class="lang-text" data-en="Event Title" data-mr="कार्यक्रमाचे नाव">Event Title</h3>
+                            <span class="ea-date">
+                                <i class="fa-solid fa-calendar-days"></i> DD Month YYYY
+                            </span>
+                        </div>
+                    </div>
+                    <p class="ea-description lang-text"
+                        data-en="Short description of the event."
+                        data-mr="कार्यक्रमाचे थोडक्यात वर्णन.">
+                        Short description of the event.
+                    </p>
+                    <div class="ea-photo-grid">
+                        <div class="ea-photo-item" data-gallery="event-1" data-index="0">
+                            <img src="images/events/event-name/photo1.jpg" alt="Event Photo 1" loading="lazy">
+                            <div class="ea-photo-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                        </div>
+                        <div class="ea-photo-item" data-gallery="event-1" data-index="1">
+                            <img src="images/events/event-name/photo2.jpg" alt="Event Photo 2" loading="lazy">
+                            <div class="ea-photo-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                        </div>
+                    </div>
+                    <div class="ea-video-block">
+                        <h4 class="lang-text" data-en="Event Video" data-mr="कार्यक्रमाचा व्हिडिओ">Event Video</h4>
+                        <video controls preload="metadata">
+                            <source src="videos/events/event-name/video1.mp4" type="video/mp4">
+                            <span class="lang-text" data-en="Your browser does not support the video tag."
+                                data-mr="आपला ब्राउझर व्हिडिओ दाखवण्यास असमर्थ आहे.">
+                                Your browser does not support the video tag.
+                            </span>
+                        </video>
+                    </div>
+                </div>
+
+                ===========================================================
+                END OF EVENT CARD TEMPLATE
+                ===========================================================
+                -->
+
+                <!-- EMPTY STATE — Remove this div once you add the first real event card -->
+                <div class="ea-empty-state" id="events-empty">
+                    <i class="fa-solid fa-images"></i>
+                    <h3 class="lang-text" data-en="Events Coming Soon" data-mr="कार्यक्रम लवकरच येतील">Events Coming Soon</h3>
+                    <p class="lang-text"
+                        data-en="Photos and videos from school events will be shared here as teachers contribute them."
+                        data-mr="शिक्षकांनी दिलेले कार्यक्रमांचे फोटो आणि व्हिडिओ येथे दाखवले जातील.">
+                        Photos and videos from school events will be shared here as teachers contribute them.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =================== STUDENT ACHIEVEMENTS SECTION =================== -->
+    <!--
+        HOW TO ADD A NEW ACHIEVEMENT CARD:
+        1. Copy the "ACHIEVEMENT CARD TEMPLATE" block below.
+        2. Remove the comment markers.
+        3. Paste ABOVE the "EMPTY STATE" div inside #achievements-grid.
+        4. Fill in:
+             - Achievement title (English and Marathi).
+             - Competition / examination name.
+             - Student name — ONLY add if the teacher provides it.
+             - Class/Standard — ONLY add if the teacher provides it.
+             - Achievement/result text.
+             - Photos in .ea-photo-grid.
+             - Video block if applicable.
+        5. Remove or hide the EMPTY STATE div once a real card is added.
+    -->
+    <section id="section-achievements" class="section-padding ea-section bg-light ea-hidden"
+        role="tabpanel" aria-labelledby="tab-achievements">
+        <div class="container">
+            <div class="text-center animate-on-scroll" style="margin-bottom: 50px;">
+                <h2 class="section-title lang-text" data-en="Student Achievements" data-mr="विद्यार्थी यश">Student Achievements</h2>
+                <p class="section-subtitle lang-text"
+                    data-en="Celebrating the talent and hard work of our students in competitions, examinations and beyond."
+                    data-mr="स्पर्धा, परीक्षा आणि इतर क्षेत्रांत आमच्या विद्यार्थ्यांच्या प्रतिभेचा आणि मेहनतीचा सत्कार.">
+                    Celebrating the talent and hard work of our students in competitions, examinations and beyond.</p>
+            </div>
+
+            <div class="ea-cards-grid" id="achievements-grid">
+
+                <!--
+                ===========================================================
+                ACHIEVEMENT CARD TEMPLATE — Copy this block to add a real achievement.
+                ===========================================================
+
+                <div class="ea-card animate-on-scroll fade-up">
+                    <div class="ea-card-header">
+                        <div class="ea-card-icon ea-card-icon--achievement">
+                            <i class="fa-solid fa-trophy"></i>
+                        </div>
+                        <div class="ea-card-meta">
+                            <h3 class="lang-text" data-en="Achievement Title" data-mr="यशाचे शीर्षक">Achievement Title</h3>
+                            <span class="ea-badge lang-text" data-en="Competition / Exam Name" data-mr="स्पर्धा / परीक्षेचे नाव">Competition / Exam Name</span>
+                        </div>
+                    </div>
+                    <div class="ea-achievement-details">
+                        <div class="ea-detail-row">
+                            <i class="fa-solid fa-user"></i>
+                            <span class="lang-text" data-en="Student Name" data-mr="विद्यार्थ्याचे नाव">Student Name</span>
+                        </div>
+                        <div class="ea-detail-row">
+                            <i class="fa-solid fa-chalkboard"></i>
+                            <span class="lang-text" data-en="Class / Standard" data-mr="इयत्ता">Class / Standard</span>
+                        </div>
+                        <div class="ea-detail-row ea-result">
+                            <i class="fa-solid fa-medal"></i>
+                            <span class="lang-text" data-en="Achievement / Result" data-mr="यश / निकाल">Achievement / Result</span>
+                        </div>
+                    </div>
+                    <div class="ea-photo-grid">
+                        <div class="ea-photo-item" data-gallery="achievement-1" data-index="0">
+                            <img src="images/achievements/achievement-name/photo1.jpg" alt="Achievement Photo" loading="lazy">
+                            <div class="ea-photo-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                        </div>
+                    </div>
+                    <div class="ea-video-block">
+                        <h4 class="lang-text" data-en="Achievement Video" data-mr="यशाचा व्हिडिओ">Achievement Video</h4>
+                        <video controls preload="metadata">
+                            <source src="videos/achievements/achievement-name/video1.mp4" type="video/mp4">
+                            <span class="lang-text" data-en="Your browser does not support the video tag."
+                                data-mr="आपला ब्राउझर व्हिडिओ दाखवण्यास असमर्थ आहे.">
+                                Your browser does not support the video tag.
+                            </span>
+                        </video>
+                    </div>
+                </div>
+
+                ===========================================================
+                END OF ACHIEVEMENT CARD TEMPLATE
+                ===========================================================
+                -->
+
+                <!-- EMPTY STATE — Remove this div once you add the first real achievement card -->
+                <div class="ea-empty-state" id="achievements-empty">
+                    <i class="fa-solid fa-trophy"></i>
+                    <h3 class="lang-text" data-en="Achievements Coming Soon" data-mr="यश लवकरच येईल">Achievements Coming Soon</h3>
+                    <p class="lang-text"
+                        data-en="Student achievement photos and videos will be shared here as teachers contribute them."
+                        data-mr="शिक्षकांनी दिलेले विद्यार्थ्यांच्या यशाचे फोटो आणि व्हिडिओ येथे दाखवले जातील.">
+                        Student achievement photos and videos will be shared here as teachers contribute them.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== LIGHTBOX ===================== -->
+    <div id="ea-lightbox" class="ea-lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+        <div class="ea-lightbox-backdrop" onclick="closeLightbox()"></div>
+        <div class="ea-lightbox-content">
+            <button class="ea-lightbox-close" onclick="closeLightbox()" aria-label="Close">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <button class="ea-lightbox-prev" onclick="lightboxNav(-1)" aria-label="Previous photo">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <img id="ea-lightbox-img" src="" alt="Photo">
+            <button class="ea-lightbox-next" onclick="lightboxNav(1)" aria-label="Next photo">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+            <div class="ea-lightbox-counter" id="ea-lightbox-counter"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-about">
+                <div class="logo" style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+                    <img src="images/RVN_logo.jpeg" alt="RVN Logo" style="height: 40px; width: auto; border-radius: 50%;">
+                    <span>R.V. Nerurkar School</span>
+                </div>
+                <p class="lang-text"
+                    data-en="Knowledge Shines through Humility. Committed to creating responsible, socially conscious citizens through quality education."
+                    data-mr="सेवा धर्म: परम गहन:. दर्जेदार शिक्षणातून जबाबदार आणि सामाजिक भान असलेले नागरिक घडवण्यासाठी आम्ही वचनबद्ध आहोत.">
+                    Knowledge Shines through Humility. Committed to creating responsible, socially conscious citizens through quality education.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3 class="lang-text" data-en="Quick Links" data-mr="जलद दुवे">Quick Links</h3>
+                <ul>
+                    <li><a href="index.html#about" class="lang-text" data-en="About Us" data-mr="आमच्याबद्दल">About Us</a></li>
+                    <li><a href="index.html#courses" class="lang-text" data-en="Academics" data-mr="शैक्षणिक">Academics</a></li>
+                    <li><a href="index.html#facilities" class="lang-text" data-en="Facilities" data-mr="सुविधा">Facilities</a></li>
+                    <li><a href="events-achievements.html" class="lang-text" data-en="Events &amp; Achievements" data-mr="कार्यक्रम आणि विद्यार्थी यश">Events &amp; Achievements</a></li>
+                    <li><a href="index.html#contact" class="lang-text" data-en="Contact" data-mr="संपर्क">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h3 class="lang-text" data-en="Stay Updated" data-mr="अद्ययावत रहा">Stay Updated</h3>
+                <p class="lang-text" data-en="Subscribe to our newsletter for the latest school news and events."
+                    data-mr="शाळेच्या ताज्या बातम्या आणि उपक्रमांसाठी आमच्या वृत्तपत्राची सदस्यता घ्या.">
+                    Subscribe to our newsletter for the latest school news and events.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Email Address" required>
+                    <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 R.V. Nerurkar High School and Junior College. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="events-achievements.js"></script>
+</body>
+
+</html>
